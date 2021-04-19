@@ -85,20 +85,20 @@ class _MyHomePageState extends State<MyHomePage> {
     final mediaquery = MediaQuery.of(context);
     final PreferredSizeWidget appbar = Platform.isIOS
         ? CupertinoNavigationBar(
-            middle: Text('Expenses Tracker'),
+            middle: const Text('Expenses Tracker'),
             trailing: Row(mainAxisSize: MainAxisSize.min, children: <Widget>[
               GestureDetector(
-                child: Icon(CupertinoIcons.add_circled_solid),
+                child: const Icon(CupertinoIcons.add_circled_solid),
                 onTap: () => startAddNewTransaction(context),
               )
             ]),
           )
         : AppBar(
-            title: Text('Expenses Tracker'),
+            title: const Text('Expenses Tracker'),
             actions: <Widget>[
               //To add the '+' icon button on the appBar
               IconButton(
-                  icon: Icon(Icons.add_circle_sharp),
+                  icon: const Icon(Icons.add_circle_sharp),
                   onPressed: () => {
                         startAddNewTransaction(
                             context) //opens up the UI to fill up the form for a new transaction

@@ -58,7 +58,7 @@ class Chart extends StatelessWidget {
                         padding: EdgeInsets.all(10),
                         alignment: Alignment.center,
                         color: Colors.blue[50],
-                        child: Text("CHART OF YOUR TOTAL SPENDING",
+                        child: const Text("CHART OF YOUR TOTAL SPENDING",
                             style: TextStyle(fontWeight: FontWeight.w900))),
 
                     //Defining the bar charts for each weekday

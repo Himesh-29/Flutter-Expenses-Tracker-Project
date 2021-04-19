@@ -72,7 +72,7 @@ class _NewTransactionState extends State<NewTransaction> {
                       children: <Widget>[
                         Expanded(
                           child: selectedDate == null
-                              ? Text("No date chosen!")
+                              ? const Text("No date chosen!")
                               : Text(
                                   'Picked Date: ${DateFormat.yMMMEd().format(selectedDate)}'),
                         ),
@@ -92,7 +92,7 @@ class _NewTransactionState extends State<NewTransaction> {
                       alignment: Alignment.bottomRight,
                       child: Platform.isIOS
                           ? CupertinoButton(
-                              child: Text('Add transaction'),
+                              child: const Text('Add transaction'),
                               onPressed: () {
                                 //If the content in the object purchased is empty or the amount for which it was purchased is less than 0, then exit the function
                                 if (object_controller.text.isEmpty ||
@@ -102,7 +102,7 @@ class _NewTransactionState extends State<NewTransaction> {
                                 }
                               })
                           : FlatButton(
-                              child: Text('Add transaction'),
+                              child: const Text('Add transaction'),
                               onPressed: () {
                                 //If the content in the object purchased is empty or the amount for which it was purchased is less than 0, then exit the function
                                 if (object_controller.text.isEmpty ||

@@ -19,7 +19,7 @@ class TransactionList extends StatelessWidget {
                 children: <Widget>[
                     Container(
                         alignment: Alignment.topCenter,
-                        child: Text('No Transactions added yet!',
+                        child: const Text('No Transactions added yet!',
                             style: TextStyle(fontSize: 30))),
                     Container(
                       child: Image.asset("assets/images/trans_not_found.png",
@@ -80,7 +80,7 @@ class TransactionList extends StatelessWidget {
                             child: Container(
                               alignment: Alignment.bottomRight,
                               child: IconButton(
-                                  icon: Icon(Icons.delete),
+                                  icon: const Icon(Icons.delete),
                                   onPressed: () {
                                     if (deleteTransaction(
                                         transactions[index].id)) {
