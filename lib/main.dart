@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
           fontFamily: 'PlayfairDisplay',
           appBarTheme: AppBarTheme(
             textTheme: ThemeData.light().textTheme.copyWith(
-                title: TextStyle(fontFamily: 'New_Tegomin', fontSize: 30)),
+                subtitle1: TextStyle(fontFamily: 'New_Tegomin', fontSize: 30)),
           )),
       home: MyHomePage(),
     );
@@ -116,14 +116,13 @@ class _MyHomePageState extends State<MyHomePage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             //To make the Chart scrollable incase it doesn't fit in size
-
             Container(
               width: mediaquery.size.width,
               child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
                     Text('Show the chart: ',
-                        style: Theme.of(context).textTheme.title,
+                        style: Theme.of(context).textTheme.subtitle1,
                         textScaleFactor: 1.2),
                     Switch.adaptive(
                       value: showChart,

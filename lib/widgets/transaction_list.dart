@@ -33,7 +33,7 @@ class TransactionList extends StatelessWidget {
   }
 
   Widget amountOfObjPurchased(index) {
-    Container(
+    return Container(
       child: Text(
           'Rs. ${transactions[index].amount.toStringAsFixed(2)}', //To restrict the amount's decimal placed not more than 2.
           style: TextStyle(fontSize: 25)),
@@ -48,14 +48,14 @@ class TransactionList extends StatelessWidget {
 
   //No Transaction Widgets
   Widget noTransactionText() {
-    Container(
+    return Container(
         alignment: Alignment.topCenter,
         child: const Text('No Transactions added yet!',
             style: TextStyle(fontSize: 30)));
   }
 
   Widget noTransactionImage(mediaquery) {
-    Container(
+    return Container(
       child: Image.asset("assets/images/trans_not_found.png",
           width: mediaquery.size.height * 0.2,
           height: mediaquery.size.height * 0.2),
@@ -64,7 +64,7 @@ class TransactionList extends StatelessWidget {
 
   //Deleting Transaction widget
   Widget removalOfTransaction(index) {
-    Container(
+    return Container(
       alignment: Alignment.bottomRight,
       child: IconButton(
           icon: const Icon(Icons.delete),
@@ -88,8 +88,9 @@ class TransactionList extends StatelessWidget {
                     noTransactionText(),
                     noTransactionImage(mediaquery),
                   ])
-            : ListView.builder(itemBuilder: (ctx, index) {
-                if (index < transactions.length) {
+            : ListView.builder(
+                itemCount: transactions.length,
+                itemBuilder: (ctx, index) {
                   return Card(
                     //Making the standard layout using
                     //Row -> (Container->Text,Container->(Column->[(Container->Text),(Container->Text)])))
@@ -116,9 +117,6 @@ class TransactionList extends StatelessWidget {
                     elevation: 50,
                     shadowColor: Colors.blue[50],
                   );
-                  itemCount:
-                  transactions.length;
-                }
-              }));
+                }));
   }
 }
